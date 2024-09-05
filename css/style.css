@@ -417,7 +417,7 @@ body {
     /* Centraliza os itens dentro da caixa */
     justify-content: space-between;
     /* Espaça uniformemente o conteúdo */
-    box-shadow: inset 1px 1px 25px rgba(0, 0, 0, 0.400);
+    box-shadow: inset 1px 1px 25px rgba(0, 0, 0, 0.251);
 }
 
 .plano:hover {
