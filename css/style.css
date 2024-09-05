@@ -3,10 +3,11 @@
 
 /* Variáveis de cores */
 :root {
-    --color-vivid-cyan-blue: #0693e3;
-    --color-vivid-purple: #8d3dd8;
-    --color-light-gray: #f4f4f4;
+    --color-vivid-cyan-blue: #2890e0;
+    --color-vivid-purple: #680098;
+    --color-light-gray: #ffffffea;
     --color-dark-gray: #333;
+    --color-ligth-contorno: #aaaaaac5;
     --gradient-vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, rgb(139, 49, 223) 100%);
 }
 
@@ -16,9 +17,9 @@ body {
     background: linear-gradient(to right,
             rgb(104, 0, 152),
             /* Roxo */
-            #760abf,
+            #861ab8,
             /* Azul intermediário */
-            #4c99d4);
+            #2890e0);
     /* Azul ciano */
     /* Gradiente de roxo para azul ciano */
     color: var(--color-dark-gray);
@@ -38,7 +39,7 @@ header {
     align-items: center;
     background-color: transparent;
     /* Fundo transparente */
-    color: white;
+    color: var(--color-light-gray);
     padding: 15px 20px;
     height: 80px;
     /* Ajuste conforme necessário */
@@ -56,6 +57,8 @@ header {
     /* Remover padding para ajustar o layout */
     margin: 0;
     /* Remover margin para ajustar o layout */
+    margin-bottom: -5px;
+    /* Ajuste o valor conforme necessário */
 }
 
 .title-text {
@@ -73,11 +76,11 @@ header {
     /* Peso 900 para 'Knet' */
     font-style: italic;
     /* Itálico */
-    font-size: 4rem;
+    font-size: 3.5rem;
     /* Tamanho maior para 'Knet' */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     /* Sombra leve */
-    color: white;
+    color: var(--color-light-gray);
 }
 
 .internet {
@@ -86,11 +89,11 @@ header {
     /* Peso 900 para 'Internet' */
     font-style: italic;
     /* Itálico */
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     /* Tamanho menor para 'Internet' */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     /* Sombra leve */
-    color: white;
+    color: var(--color-light-gray);
 }
 
 /* Estilos do menu de navegação */
@@ -100,7 +103,7 @@ nav {
     top: 0;
     right: 0;
     left: 0;
-    background-color: rgba(110, 0, 161, 0.8);
+    background-color: rgb(104, 0, 152, 0.9);
     /* Fundo semi-transparente */
     display: flex;
     justify-content: center;
@@ -114,6 +117,21 @@ nav {
     box-sizing: border-box;
     /* Inclui padding na altura total */
 }
+
+/* Estilos para o link ativo na navegação */
+nav a.active {
+    color: var(--color-vivid-purple);
+    /* Cor do texto */
+    font-weight: bold;
+    /* Peso da fonte */
+    text-decoration: none;
+    /* Remove o sublinhado */
+    text-shadow: 0 0 8px rgba(178, 136, 212, 0.9), 0 0 15px var(--color-vivid-purple), 0 0 20px var(--color-vivid-purple);
+    /* Efeito neon mais pronunciado */
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    /* Transição suave para cor e sombra */
+}
+
 
 /* Estilos do menu dentro da nav */
 .hfe-nav-menu {
@@ -135,21 +153,21 @@ nav {
 }
 
 .hfe-nav-menu li:last-child a {
-    border: 2px solid white;
+    border: 2px solid var(--color-light-gray);
     /* Borda sólida ao redor do link */
     padding: 8px 16px;
-    border-radius: 5px;
-    transition: background-color 0.3s, border-color 0.3s;
+    border-radius: 20px;
+    transition: background-color 0.5s, border-color 0.5s;
 }
 
 .hfe-nav-menu li:last-child a:hover {
-    color: #4b0082;
-    border-color: #4b0082;
-    text-shadow: none;
+    color: var(--color-ligth-contorno);
+    border-color: var(--color-ligth-contorno);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
 }
 
 .hfe-nav-menu a {
-    color: white;
+    color: var(--color-light-gray);
     font-family: 'Poppins', sans-serif;
     text-decoration: none;
     font-weight: 500;
@@ -160,7 +178,9 @@ nav {
 }
 
 .hfe-nav-menu a:hover {
-    color: var(--color-vivid-purple);
+    color: var(--color-ligth-contorno);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+    transition: background-color 0.5s, border-color 0.5s;
 }
 
 /* Espaço no topo para evitar sobreposição do conteúdo com o menu */
@@ -177,7 +197,7 @@ body {
     color: white;
     font-size: 24px;
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: background-color 0.5s, border-color 0.5s;
 }
 
 .menu-toggle:hover i {
@@ -233,141 +253,303 @@ body {
     /* Remove qualquer margem externa, se necessário */
 }
 
+/* Estilos para o conteúdo principal */
 .home-content {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    padding: 40px 20px;
-    background-color: transparent;
+    justify-content: space-between;
+    padding: 10px;
+    /* Espaçamento ao redor do conteúdo */
 }
 
 .home-text {
-    flex: 1;
-    min-width: 300px;
-    padding: 20px;
-    background-color: transparent;
-    border-radius: 10px;
+    padding-right: 20px;
+    /* Aumenta o espaço à direita do texto */
 }
 
 .home-image {
     flex: 1;
-    min-width: 300px;
-    text-align: right;
+    margin-left: 40px;
+    /* Aumenta o espaço à esquerda da imagem */
 }
 
 .home-image img {
     max-width: 100%;
+    /* Garante que a imagem não ultrapasse a largura do contêiner */
     height: auto;
-    border-radius: 10px;
+    /* Mantém a proporção da imagem */
 }
 
-.home-text h2 {
+
+
+.home-text .assine-ja {
+    padding-left: -200px;
+    font-size: 3rem;
+    /* Tamanho da fonte para "Assine Já!" */
+    font-weight: bold;
+    /* Negrito para o texto */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    /* Sombra para o texto */
+    margin-bottom: 10px;
+    /* Espaçamento abaixo do h2 */
+    color: var(--color-light-gray);
+    line-height: 1px;
+}
+
+.home-text .velocidade {
+    padding-left: -200px;
     font-size: 2rem;
+    /* Tamanho da fonte para "e conheça a verdadeira velocidade." */
+    font-weight: bold;
+    /* Negrito para o texto */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    /* Sombra para o texto */
     margin-bottom: 20px;
-    color: #ffffff;
+    /* Espaçamento abaixo do h2 */
+    color: var(--color-light-gray);
 }
 
 .home-text p {
-    margin: 10px 0;
-    color: #ffffff;
+    padding-left: -200px;
+    font-size: 1.4rem;
+    /* Tamanho da fonte para o parágrafo */
+    font-weight: normal;
+    /* Peso normal para o texto do parágrafo */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    /* Sombra para o texto do parágrafo */
+    margin-top: 0;
+    /* Remove margem superior padrão */
+    margin-bottom: 20px;
+    /* Espaçamento abaixo do parágrafo */
+    max-width: 600px;
+    /* Limita a largura máxima do parágrafo */
+    text-align: left;
+    /* Alinha o texto à esquerda */
+    line-height: 1.6;
+    /* Ajusta o espaçamento entre linhas para melhor legibilidade */
+    color: var(--color-light-gray);
 }
 
+.home-text .assine-agora {
+    display: inline-block;
+    /* Faz o link se comportar como um bloco em linha */
+    padding: 10px 20px;
+    /* Espaçamento interno do link */
+    border-radius: 25px;
+    /* Bordas arredondadas */
+    background-color: var(--color-vivid-cyan-blue);
+    /* Cor de fundo */
+    text-decoration: none;
+    /* Remove o sublinhado */
+    font-weight: bold;
+    /* Negrito para o texto do link */
+    color: var(--color-light-gray);
+    border: 1px solid #01010156;
+    padding: 12px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 900;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.home-text .assine-agora:hover {
+    background-color: var(--color-vivid-purple);
+    /* Cor de fundo ao passar o mouse */
+}
+
+.home-image img {
+    max-width: 100%;
+    /* Garante que a imagem não ultrapasse a largura do contêiner */
+    height: auto;
+    /* Mantém a proporção da imagem */
+}
 
 /* Estilos da seção de planos */
 #planos {
     width: 100%;
-    /* Ocupa 100% da largura da tela */
     min-height: 100vh;
-    /* Ocupa 100% da altura da tela */
     background: transparent;
     color: white;
     padding: 60px 20px;
     text-align: center;
+    gap: 40px;
 }
 
 #planos h2 {
     font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
+#planos p {
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+
+/* Estilo dos planos */
 .planos {
     display: flex;
     justify-content: center;
+    gap: 20px;
     flex-wrap: wrap;
-    gap: 30px;
+    margin: 0;
 }
 
 .plano {
-    background: white;
-    color: var(--color-dark-gray);
-    border: 1px solid #ddd;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(152, 29, 235, 0.1);
-    padding: 30px;
-    width: 300px;
+    background-color: #ffffffea;
+    border: 1px solid #aaaaaac5;
+    border-radius: 18px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    padding: 22px;
+    /* Aumentado para melhor espaçamento interno */
+    width: 240px;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.plano h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-    color: var rgba(110, 0, 161, 0.6);
-}
-
-.plano p {
-    margin: 10px 0;
-    font-size: 1rem;
-}
-
-.plano p.price {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin: 20px 0;
+    margin: 20px;
+    min-height: 200px;
+    display: flex;
+    /* Adicionado para facilitar o alinhamento dos filhos */
+    flex-direction: column;
+    /* Adicionado para empilhar verticalmente os filhos */
+    align-items: center;
+    /* Centraliza os itens dentro da caixa */
+    justify-content: space-between;
+    /* Espaça uniformemente o conteúdo */
+    box-shadow: inset 1px 1px 25px rgba(0, 0, 0, 0.400);
 }
 
 .plano:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(139, 49, 223);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.550);
 }
 
-/* Estilos dos botões de assinatura */
-.assine-agora {
-    background-color: rgb(110, 0, 161);
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    font-size: 16px;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    text-decoration: none;
+/* Estilo dos títulos dentro dos planos */
+.plano h3 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 0;
+    /* Remove o espaçamento abaixo do título */
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+
 }
 
-.assine-agora:hover {
-    background-color: var(--color-vivid-cyan-blue);
-    transform: scale(1.05);
+.plano .number {
+    font-size: 4rem;
+    font-weight: 1000;
+    color: #333;
+    text-shadow: 1px 1px 0px rgb(0, 0, 0);
+    margin: 0;
+    /* Remove margem para alinhamento */
+    margin-top: -50px;
 }
 
-/* Estilos dos botões Elementor */
+.plano .unit {
+    font-size: 1.7rem;
+    color: var(--color-dark-gray);
+    font-weight: bold;
+    margin-top: -10px;
+    line-height: 0;
+    margin-bottom: 30px;
+
+}
+
+/* Estilo dos parágrafos dentro dos planos */
+.plano p {
+    margin: 0.5px 0;
+    color: #4242429d;
+    line-height: 1;
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+
+/* Estilo do preço */
+.plano .price {
+
+    font-weight: 1000;
+    margin: 0;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(97, 97, 97, 0.5);
+    padding: 2px 5px;
+    background-color: transparent;
+    display: inline-block;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.397);
+    font-size: 3em;
+}
+
+.price .reais {
+    font-size: 3em;
+    /* Tamanho maior para os reais */
+    color: #333;
+    /* Cor preta para os reais */
+}
+
+.price .centavos {
+    font-size: 0.75em;
+    /* Tamanho menor para os centavos */
+    vertical-align: super;
+    /* Alinha os centavos como superscript */
+    color: #555;
+    /* Cor cinza para os centavos */
+}
+
+/* Estilo do botão */
 .elementor-button {
     background-color: var(--color-vivid-cyan-blue);
-    color: white;
-    border: none;
+    color: var(--color-light-gray);
+    border: 1px solid #aaaaaac5;
     padding: 12px 25px;
     font-size: 16px;
     border-radius: 50px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     text-decoration: none;
+    margin-top: 20px;
+    /* Adiciona espaço acima do botão */
+    font-weight: 1000;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .elementor-button:hover {
     background-color: var(--color-vivid-purple);
+    transition: background-color 0.5s, border-color 0.5s;
 }
 
+/* Estilo do título e do parágrafo abaixo do título */
+#planos h2 {
+    font-size: 2.4rem;
+    /* Tamanho do título */
+    font-weight: 600;
+    /* Peso da fonte do título */
+    margin-bottom: 10px;
+    /* Espaçamento abaixo do título */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    /* Sombra para destacar o título */
+    line-height: 1;
+    color: #f4f4f4f5;
+}
+
+#planos .subtitulo {
+    margin-top: 0;
+    /* Remove o espaço acima do parágrafo */
+    font-size: 1.1rem;
+    /* Tamanho da fonte do parágrafo */
+    line-height: 1.4;
+    /* Ajusta o espaçamento entre as linhas */
+    color: var(--color-light-gray);
+    /* Cor do texto do parágrafo */
+    font-weight: 500;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.650);
+    /* Sombra para melhorar a legibilidade */
+}
 
 
 /* Estilos da seção Sobre e Contato */
@@ -375,77 +557,186 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 20px;
+    gap: 60px;
+    /* Espaçamento entre os blocos de texto e formulário */
 }
 
+/* Estilos para a seção Sobre */
 #sobre {
     width: 100%;
-    /* Ocupa 100% da largura da tela */
     min-height: 100vh;
     /* Ocupa 100% da altura da tela */
-
-}
-
-.sobre-texto,
-.contato-formulario {
+    padding: 60px 20px;
+    /* Espaçamento ao redor da seção */
+    display: flex;
     flex: 1;
-    /* Isso garante que ambos os elementos tenham o mesmo tamanho disponível */
-    min-width: 300px;
-    /* Ajuste conforme necessário */
-    padding: 20px;
-    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    /* Alinha os itens à esquerda */
+    background-color: transparent;
+    /* Cor de fundo da seção */
 }
 
 #sobre h1 {
-    color: #ffffff;
+    margin: 0;
+    /* Remove a margem padrão do título */
+    margin-bottom: 20px;
+    /* Espaçamento abaixo do título */
+    text-align: left;
+    /* Alinha o título à esquerda */
+    color: var(--color-light-gray);
+    /* Cor do título */
+    width: 100%;
+    /* Garante que o título não ultrapasse os limites do contêiner */
+    box-sizing: border-box;
+    /* Inclui padding e border no cálculo da largura total */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    font-size: 2rem;
+
 }
 
+/* Estilos do Bloco de Texto */
 .sobre-texto {
     background-color: transparent;
-    color: #ffffff;
+    /* Cor de fundo do bloco de texto */
+    padding: 30px;
+    /* Espaçamento interno */
+    border-radius: 10px;
+    /* Bordas arredondadas */
+    flex: 1;
+    /* Permite que o bloco de texto ocupe a largura disponível */
+    max-width: 600px;
+    /* Largura máxima do bloco de texto */
+    color: var(--color-light-gray);
+    /* Cor do texto */
+    font-size: 1.4rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
+.sobre-texto p {
+    line-height: 1.6;
+    /* Altura da linha para melhor legibilidade */
+}
+
+
+/* Estilos do Bloco de Formulário */
 .contato-formulario {
-    background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: transparent;
+    /* Cor de fundo do bloco de formulário */
+    padding: 30px;
+    /* Espaçamento interno */
+    border-radius: 10px;
+    /* Bordas arredondadas */
+    flex: 1;
+    /* Permite que o bloco de formulário ocupe a largura disponível */
+    max-width: 600px;
+    /* Largura máxima do bloco de formulário */
+
 }
 
+/* Estilos do Formulário */
 .contato-formulario form {
     display: flex;
     flex-direction: column;
-}
-
-.contato-formulario form label,
-.contato-formulario form input,
-.contato-formulario form textarea {
     width: 100%;
-    margin: 10px 0;
+    /* Garante que o formulário ocupe toda a largura do bloco */
+    align-items: center;
+    /* Centraliza os campos de input e textarea horizontalmente */
+    background-color: #ffffff31;
+    /* Gradiente cinza claro */
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
-.contato-formulario form input,
-.contato-formulario form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.contato-formulario h2 {
+    color: var(--color-light-gray);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    font-size: 2rem;
+    line-height: 0;
 }
 
-.contato-formulario form button {
+.contato-formulario p {
+    color: var(--color-light-gray);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    font-size: 1.4rem;
+}
+
+.contato-formulario label,
+.contato-formulario input,
+.contato-formulario textarea {
+    width: 90%;
+    /* Ocupa 90% da largura do bloco */
+    margin: 8px 0;
+    /* Espaçamento vertical entre os campos */
+
+}
+
+.contato-formulario input,
+.contato-formulario textarea {
     padding: 10px;
-    border: none;
-    border-radius: 5px;
+    /* Espaçamento interno */
+    border: 1px solid #03030341;
+    /* Borda dos campos */
+    border-radius: 20px;
+    /* Bordas arredondadas */
+    box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.259);
+}
+
+/* Estilos dos Rótulos */
+.contato-formulario label {
+    margin-bottom: 8px;
+    /* Espaçamento abaixo do rótulo */
+    color: var(--color-light-gray);
+    /* Cor do rótulo */
+    font-size: 1.1rem;
+    /* Tamanho da fonte do rótulo */
+    font-family: 'poppins', sans-serif;
+    /* Fonte dos rótulos */
+}
+
+
+.contato-formulario input::placeholder,
+.contato-formulario textarea::placeholder {
+    color: #888888;
+    /* Cor do texto do placeholder */
+    font-style: italic;
+    /* Estilo do texto do placeholder */
+    font-family: 'Poppins', sans-serif;
+}
+
+.contato-formulario button {
+    width: 95%;
+    padding: 10px 20px;
+    /* Espaçamento interno do botão */
+    border: 1px solid #0000001c;
+    /* Borda do botão */
+    border-radius: 20px;
+    /* Bordas arredondadas */
     background-color: var(--color-vivid-cyan-blue);
-    color: white;
+    /* Cor de fundo do botão */
+    color: var(--color-light-gray);
+    /* Cor do texto do botão */
     cursor: pointer;
-    transition: background-color 0.3s;
+    /* Cursor de ponteiro ao passar sobre o botão */
+    transition: background-color 0.3s, border-color 0.3s;
+    /* Transições suaves */
+    font-weight: bold;
+    /* Negrito no texto do botão */
+    font-family: 'Poppins', sans-serif;
+    /* Fonte do botão */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-.contato-formulario form button:hover {
+.contato-formulario button:hover {
     background-color: var(--color-vivid-purple);
+    /* Cor de fundo ao passar o mouse */
 }
+
 
 /* Estilos para o footer */
 footer {
-    background-color:transparent;
+    background-color: transparent;
     /* Cor de fundo escura para contraste com o texto branco */
     color: rgba(255, 255, 255, 0.573);
     /* Cor do texto */

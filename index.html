@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/style.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+    <script src="path/to/your/script.js"></script>
+
+
+
     <title>Knet Internet</title>
 </head>
 
@@ -20,7 +25,8 @@
             <li><a href="#home">Início</a></li>
             <li><a href="#sobre">Sobre</a></li>
             <li><a href="#planos">Planos</a></li>
-            <li><a href="#central">Central do Assinante</a></li>
+            <li><a href="https://thinternet.sgp.net.br/accounts/central/login" target="_blank">Central do Assinante</a>
+            </li>
         </ul>
     </nav>
 </header>
@@ -34,69 +40,79 @@
 <main id="home">
     <div class="home-content">
         <aside class="home-text">
-            <h2>Assine Já!</h2>
-            <h2>e conheça a verdadeira velocidade.</h2>
+            <h2 class="assine-ja">Assine Já!</h2>
+            <h2 class="velocidade">e conheça a verdadeira velocidade.</h2>
             <p>Com a Knet Internet, você navega, joga, ouve músicas e assiste a vídeos sem se preocupar com lag ou
                 quedas de conexão. Conecte-se ao futuro com a velocidade e estabilidade que você merece!</p>
-            <a href="#planos" class="assine-agora">Assine Já!</a>
+            <a href="https://api.whatsapp.com/send?phone=5511977136623&text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20seus%20planos."
+                class="assine-agora">Assine Já!</a>
         </aside>
         <aside class="home-image">
             <img src="path/to/image.jpg" alt="Knet Internet">
         </aside>
     </div>
 </main>
-
 <!-- Plans Section -->
 <section id="planos">
-    <h2>Nossos Planos</h2>
+    <h2>Nossos Planos
+        <p class="subtitulo">A Knet tem o plano certo para você!</p>
+    </h2>
     <div class="planos">
         <div class="plano">
-            <h3>Plano Básico</h3>
-            <p class="price">R$99,99</p>
-            <p>Velocidade de 100 Mbps</p>
-            <p>Ideal para uso doméstico</p>
-            <a href="#" class="elementor-button">Assine Agora</a>
+            <h3><span class="number">50</span><span class="unit">Mega</span></h3>
+            <p>Acesso Ilimitado 24h</p>
+            <p>Livre de Franquia de Dados</p>
+            <p>Fibra óptica</p>
+            <p class="price">R$ <span class="reais">73</span>,<span class="centavos">90</span></p>
+            <a href="https://api.whatsapp.com/send?phone=5511977136623&text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20seus%20planos."
+                class="elementor-button">Assine Agora</a>
         </div>
         <div class="plano">
-            <h3>Plano Intermediário</h3>
-            <p class="price">R$199,99</p>
-            <p>Velocidade de 200 Mbps</p>
-            <p>Perfeito para famílias e pequenas empresas</p>
-            <a href="#" class="elementor-button">Assine Agora</a>
+            <h3><span class="number">100</span><span class="unit">Mega</span></h3>
+            <p>Acesso Ilimitado 24h</p>
+            <p>Livre de Franquia de Dados</p>
+            <p>Fibra óptica</p>
+            <p class="price">R$ <span class="reais">89</span>,<span class="centavos">90</span></p>
+            <a href="https://api.whatsapp.com/send?phone=5511977136623&text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20seus%20planos."
+                class="elementor-button">Assine Agora</a>
         </div>
         <div class="plano">
-            <h3>Plano Avançado</h3>
-            <p class="price">R$299,99</p>
-            <p>Velocidade de 500 Mbps</p>
-            <p>Para uso intenso e empresas grandes</p>
-            <a href="#" class="elementor-button">Assine Agora</a>
+            <h3><span class="number">400</span><span class="unit">Mega</span></h3>
+            <p>Acesso Ilimitado 24h</p>
+            <p>Livre de Franquia de Dados</p>
+            <p>Fibra óptica</p>
+            <p class="price">R$ <span class="reais">109</span>,<span class="centavos">90</span></p>
+            <a href="https://api.whatsapp.com/send?phone=5511977136623&text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20seus%20planos."
+                class="elementor-button">Assine Agora</a>
         </div>
     </div>
 </section>
 
-
 <!-- About Section -->
 <section id="sobre">
-    <div class="container">
-        <h1>Sobre Nós</h1>
-        <div class="sobre-e-contato">
-            <aside class="sobre-texto">
-                <p>Conheça mais sobre a nossa história e como a Knet Internet começou a fornecer internet de alta
-                    qualidade.</p>
-            </aside>
-            <aside class="contato-formulario">
-                <h2>Fale Conosco</h2>
-                <form>
-                    <label for="name">Nome:</label>
-                    <input type="text" id="name" name="name" required>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                    <label for="message">Mensagem:</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
-                    <button type="submit">Enviar</button>
-                </form>
-            </aside>
-        </div>
+    <div class="sobre-e-contato">
+        <aside class="sobre-texto">
+            <h1>Sobre Nós</h1>
+            <p>Conheça mais sobre a nossa história e como a Knet Internet começou a fornecer internet de alta qualidade.
+            </p>
+        </aside>
+        <aside class="contato-formulario">
+            <h2>Fale Conosco</h2>
+            <p>Está com alguma dúvida? nós esclarecemos.</p>
+            <form action="https://formspree.io/f/your-form-id" method="POST">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" placeholder="Digite seu nome aqui..." required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu email aqui..." required>
+
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" rows="4" placeholder="Digite sua mensagem aqui..."
+                    required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </aside>
     </div>
 </section>
 
