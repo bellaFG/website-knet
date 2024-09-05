@@ -13,7 +13,14 @@
 /* Estilo geral do corpo da página */
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--color-light-gray);
+    background: linear-gradient(to right,
+            rgb(104, 0, 152),
+            /* Roxo */
+            #760abf,
+            /* Azul intermediário */
+            #4c99d4);
+    /* Azul ciano */
+    /* Gradiente de roxo para azul ciano */
     color: var(--color-dark-gray);
     margin: 0;
     padding: 0;
@@ -22,10 +29,12 @@ body {
     padding: 15px;
 }
 
+/* Estilos do header */
 header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    /* Distribui os itens em extremos opostos */
     align-items: center;
     background-color: transparent;
     /* Fundo transparente */
@@ -41,15 +50,19 @@ header {
 #title {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    /* Centraliza horizontalmente */
+    align-items: flex-start;
+    /* Alinha o título à esquerda */
+    padding: 0;
+    /* Remover padding para ajustar o layout */
+    margin: 0;
+    /* Remover margin para ajustar o layout */
 }
 
 .title-text {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    /* Centraliza horizontalmente */
+    align-items: flex-start;
+    /* Alinha o texto à esquerda */
     line-height: 0.8;
     /* Ajusta o espaçamento entre linhas */
 }
@@ -57,54 +70,103 @@ header {
 .knit {
     font-family: 'Poppins', sans-serif;
     font-weight: 900;
-    /* Poppins Black */
-    font-size: 5rem;
+    /* Peso 900 para 'Knet' */
+    font-style: italic;
+    /* Itálico */
+    font-size: 4rem;
     /* Tamanho maior para 'Knet' */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     /* Sombra leve */
+    color: white;
 }
 
 .internet {
     font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    /* Poppins SemiBold */
-    font-size: 2rem;
+    font-weight: 500;
+    /* Peso 900 para 'Internet' */
+    font-style: italic;
+    /* Itálico */
+    font-size: 1.8rem;
     /* Tamanho menor para 'Internet' */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     /* Sombra leve */
+    color: white;
 }
-
 
 /* Estilos do menu de navegação */
 nav {
+    position: fixed;
+    /* Fixar o menu no topo */
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(110, 0, 161, 0.8);
+    /* Fundo semi-transparente */
     display: flex;
     justify-content: center;
+    /* Centraliza o menu de navegação */
     align-items: center;
+    z-index: 1000;
+    /* Garante que fique acima de outros elementos */
+    height: 80px;
+    /* Define a altura da barra de navegação */
+    padding: 0 20px;
+    box-sizing: border-box;
+    /* Inclui padding na altura total */
 }
 
+/* Estilos do menu dentro da nav */
 .hfe-nav-menu {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 100px;
+    /* Espaçamento entre itens do menu */
     margin: 0;
     padding: 0;
+    flex: 1;
+    /* Permite que o menu ocupe o espaço disponível */
+    justify-content: center;
+    /* Centraliza os itens do menu */
 }
 
+/* Estilo específico para "Central do Assinante" */
 .hfe-nav-menu li {
     display: inline-block;
+}
+
+.hfe-nav-menu li:last-child a {
+    border: 2px solid white;
+    /* Borda sólida ao redor do link */
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.hfe-nav-menu li:last-child a:hover {
+    color: #4b0082;
+    border-color: #4b0082;
+    text-shadow: none;
 }
 
 .hfe-nav-menu a {
     color: white;
     font-family: 'Poppins', sans-serif;
     text-decoration: none;
-    font-weight: 700;
-    font-size: 16px;
-    transition: color 0.3s;
+    font-weight: 500;
+    font-size: 18px;
+    transition: color 0.5s;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    /* Sombra leve */
 }
 
 .hfe-nav-menu a:hover {
     color: var(--color-vivid-purple);
+}
+
+/* Espaço no topo para evitar sobreposição do conteúdo com o menu */
+body {
+    padding-top: 80px;
+    /* Ajuste conforme a altura do menu */
 }
 
 /* Estilos do botão de menu toggle */
@@ -163,7 +225,7 @@ nav {
     /* Opcional: para centralizar verticalmente */
     padding: 20px;
     /* Ajuste o padding conforme necessário */
-    background-color: var(--color-light-gray);
+    background-color: transparent;
     /* Ajuste a cor de fundo conforme necessário */
     box-sizing: border-box;
     /* Inclui padding e bordas na largura e altura */
@@ -177,14 +239,14 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 40px 20px;
-    background-color: var(--color-light-gray);
+    background-color: transparent;
 }
 
 .home-text {
     flex: 1;
     min-width: 300px;
     padding: 20px;
-    background-color: #ffffff;
+    background-color: transparent;
     border-radius: 10px;
 }
 
@@ -203,10 +265,12 @@ nav {
 .home-text h2 {
     font-size: 2rem;
     margin-bottom: 20px;
+    color: #ffffff;
 }
 
 .home-text p {
     margin: 10px 0;
+    color: #ffffff;
 }
 
 
@@ -216,7 +280,7 @@ nav {
     /* Ocupa 100% da largura da tela */
     min-height: 100vh;
     /* Ocupa 100% da altura da tela */
-    background: var(--gradient-vivid-cyan-blue-to-vivid-purple);
+    background: transparent;
     color: white;
     padding: 60px 20px;
     text-align: center;
@@ -250,7 +314,7 @@ nav {
 .plano h3 {
     font-size: 1.8rem;
     margin-bottom: 10px;
-    color: var(--color-vivid-cyan-blue);
+    color: var rgba(110, 0, 161, 0.6);
 }
 
 .plano p {
@@ -271,7 +335,7 @@ nav {
 
 /* Estilos dos botões de assinatura */
 .assine-agora {
-    background-color: var(--color-vivid-purple);
+    background-color: rgb(110, 0, 161);
     color: white;
     border: none;
     padding: 12px 25px;
@@ -319,6 +383,7 @@ nav {
     /* Ocupa 100% da largura da tela */
     min-height: 100vh;
     /* Ocupa 100% da altura da tela */
+
 }
 
 .sobre-texto,
@@ -331,8 +396,13 @@ nav {
     border-radius: 10px;
 }
 
+#sobre h1 {
+    color: #ffffff;
+}
+
 .sobre-texto {
-    background-color: #f0f0f0;
+    background-color: transparent;
+    color: #ffffff;
 }
 
 .contato-formulario {
@@ -373,73 +443,25 @@ nav {
     background-color: var(--color-vivid-purple);
 }
 
-
-/* Estilos para diálogos e widgets */
-.dialog-widget-content {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+/* Estilos para o footer */
+footer {
+    background-color:transparent;
+    /* Cor de fundo escura para contraste com o texto branco */
+    color: rgba(255, 255, 255, 0.573);
+    /* Cor do texto */
     padding: 20px;
-    position: relative;
-    overflow: hidden;
+    /* Espaçamento interno */
+    text-align: center;
+    /* Centraliza o texto */
+    font-family: 'Poppins', sans-serif;
+    /* Fonte Poppins */
+    font-size: 1rem;
+    /* Tamanho da fonte */
+    margin-top: 40px;
+    /* Espaço acima do footer */
 }
 
-.dialog-close-button {
-    background: var(--color-vivid-cyan-blue);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    padding: 10px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.dialog-close-button:hover {
-    background-color: var(--color-vivid-purple);
-}
-
-.dialog-type-lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.dialog-buttons-wrapper {
-    margin-top: 20px;
-}
-
-.dialog-button {
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.dialog-button-success {
-    background-color: var(--color-vivid-cyan-blue);
-    color: white;
-}
-
-.dialog-button-success:hover {
-    background-color: var(--color-vivid-purple);
-}
-
-.dialog-button-danger {
-    background-color: #ff6f6f;
-    color: white;
-}
-
-.dialog-button-danger:hover {
-    background-color: #ff4f4f;
+footer p {
+    margin: 0;
+    /* Remove a margem padrão */
 }
