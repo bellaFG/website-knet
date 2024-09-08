@@ -3,756 +3,449 @@
 
 /* Variáveis de cores */
 :root {
-    --color-vivid-cyan-blue: #2890e0;
-    --color-vivid-purple: #680098;
-    --color-light-gray: #ffffffea;
-    --color-dark-gray: #333;
-    --color-ligth-contorno: #aaaaaac5;
-    --gradient-vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, rgb(139, 49, 223) 100%);
+	--color-vivid-cyan-blue: #2890e0;
+	--color-vivid-purple: #680098;
+	--color-light-gray: #ffffffea;
+	--color-dark-gray: #333;
+	--color-ligth-contorno: #aaaaaac5;
+	--gradient-vivid-cyan-blue-to-vivid-purple: linear-gradient(
+		135deg,
+		rgba(6, 147, 227, 1) 0%,
+		rgb(139, 49, 223) 100%
+	);
 }
 
-/* Estilo geral do corpo da página */
+section {
+	width: 100vh;
+}
+
+* {
+	color: var(--color-light-gray);
+	transition: all 0.5s;
+	box-sizing: border-box;
+	margin: 0;
+}
+
 body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to right,
-            rgb(104, 0, 152),
-            /* Roxo */
-            #861ab8,
-            /* Azul intermediário */
-            #2890e0);
-    /* Azul ciano */
-    /* Gradiente de roxo para azul ciano */
-    color: var(--color-dark-gray);
-    margin: 0;
-    padding: 0;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 15px;
+	font-family: 'Poppins', sans-serif;
+	background: linear-gradient(
+		to right,
+		rgb(104, 0, 152),
+		/* Roxo */ #861ab8,
+		/* Azul intermediário */ #2890e0
+	);
+	max-width: 1200px;
+	margin: 0 auto;
 }
 
-/* Estilos do header */
 header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    /* Distribui os itens em extremos opostos */
-    align-items: center;
-    background-color: transparent;
-    /* Fundo transparente */
-    color: var(--color-light-gray);
-    padding: 15px 20px;
-    height: 80px;
-    /* Ajuste conforme necessário */
-    box-sizing: border-box;
-    /* Inclui padding e borda na altura total */
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 40px;
+	height: 110px;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	background-color: rgb(104, 0, 152, 0.9);
 }
 
-/* Estilos do título no header */
-#title {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    /* Alinha o título à esquerda */
-    padding: 0;
-    /* Remover padding para ajustar o layout */
-    margin: 0;
-    /* Remover margin para ajustar o layout */
-    margin-bottom: -5px;
-    /* Ajuste o valor conforme necessário */
+h1 p {
+	font-weight: 900;
+	font-style: italic;
+	font-size: 3.5rem;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+	line-height: 0.5;
 }
 
-.title-text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    /* Alinha o texto à esquerda */
-    line-height: 0.8;
-    /* Ajusta o espaçamento entre linhas */
+h1 span {
+	font-weight: 600;
+	font-style: italic;
+	font-size: 1.6rem;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-.knit {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 900;
-    /* Peso 900 para 'Knet' */
-    font-style: italic;
-    /* Itálico */
-    font-size: 3.5rem;
-    /* Tamanho maior para 'Knet' */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    /* Sombra leve */
-    color: var(--color-light-gray);
+.central-button a {
+	border: 2px solid var(--color-light-gray);
+	padding: 8px 16px;
+	border-radius: 20px;
+	cursor: pointer;
+	text-decoration: none;
 }
 
-.internet {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    /* Peso 900 para 'Internet' */
-    font-style: italic;
-    /* Itálico */
-    font-size: 1.6rem;
-    /* Tamanho menor para 'Internet' */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    /* Sombra leve */
-    color: var(--color-light-gray);
+.central-button a:hover {
+	color: rgb(186, 160, 235);
+	text-shadow: 1px 1px 3px rgb(219, 193, 236);
+}
+.menu {
+	display: flex;
+	gap: 120px;
+	justify-content: center;
 }
 
-/* Estilos do menu de navegação */
-nav {
-    position: fixed;
-    /* Fixar o menu no topo */
-    top: 0;
-    right: 0;
-    left: 0;
-    background-color: rgb(104, 0, 152, 0.9);
-    /* Fundo semi-transparente */
-    display: flex;
-    justify-content: center;
-    /* Centraliza o menu de navegação */
-    align-items: center;
-    z-index: 1000;
-    /* Garante que fique acima de outros elementos */
-    height: 80px;
-    /* Define a altura da barra de navegação */
-    padding: 0 20px;
-    box-sizing: border-box;
-    /* Inclui padding na altura total */
+.menu li {
+	display: inline-block;
 }
 
-/* Estilos para o link ativo na navegação */
-nav a.active {
-    color: var(--color-vivid-purple);
-    /* Cor do texto */
-    font-weight: bold;
-    /* Peso da fonte */
-    text-decoration: none;
-    /* Remove o sublinhado */
-    text-shadow: 0 0 8px rgba(178, 136, 212, 0.9), 0 0 15px var(--color-vivid-purple), 0 0 20px var(--color-vivid-purple);
-    /* Efeito neon mais pronunciado */
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-    /* Transição suave para cor e sombra */
+.menu a {
+	text-decoration: none;
+	font-weight: 500;
+	font-size: 18px;
+	transition: color 0.5s;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
 }
 
-
-/* Estilos do menu dentro da nav */
-.hfe-nav-menu {
-    list-style: none;
-    display: flex;
-    gap: 100px;
-    /* Espaçamento entre itens do menu */
-    margin: 0;
-    padding: 0;
-    flex: 1;
-    /* Permite que o menu ocupe o espaço disponível */
-    justify-content: center;
-    /* Centraliza os itens do menu */
+.menu a:hover {
+	color: rgb(186, 160, 235);
+	text-shadow: 1px 1px 3px rgb(219, 193, 236);
 }
 
-/* Estilo específico para "Central do Assinante" */
-.hfe-nav-menu li {
-    display: inline-block;
-}
-
-.hfe-nav-menu li:last-child a {
-    border: 2px solid var(--color-light-gray);
-    /* Borda sólida ao redor do link */
-    padding: 8px 16px;
-    border-radius: 20px;
-    transition: background-color 0.5s, border-color 0.5s;
-}
-
-.hfe-nav-menu li:last-child a:hover {
-    color: var(--color-ligth-contorno);
-    border-color: var(--color-ligth-contorno);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
-}
-
-.hfe-nav-menu a {
-    color: var(--color-light-gray);
-    font-family: 'Poppins', sans-serif;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 18px;
-    transition: color 0.5s;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
-    /* Sombra leve */
-}
-
-.hfe-nav-menu a:hover {
-    color: var(--color-ligth-contorno);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
-    transition: background-color 0.5s, border-color 0.5s;
-}
-
-/* Espaço no topo para evitar sobreposição do conteúdo com o menu */
-body {
-    padding-top: 80px;
-    /* Ajuste conforme a altura do menu */
-}
-
-/* Estilos do botão de menu toggle */
 .menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-    transition: background-color 0.5s, border-color 0.5s;
+	display: none;
+	background: none;
+	border: none;
+	font-size: 24px;
+	cursor: pointer;
 }
 
 .menu-toggle:hover i {
-    transform: scale(1.1);
+	transform: scale(1.1);
 }
 
-/* Estilos responsivos para o menu de navegação */
 @media (max-width: 768px) {
-    .hfe-nav-menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: var(--color-vivid-cyan-blue);
-        position: absolute;
-        top: 60px;
-        left: 0;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
+	.hfe-nav-menu {
+		display: none;
+		flex-direction: column;
+		width: 100%;
+		background: var(--color-vivid-cyan-blue);
+		position: absolute;
+		top: 60px;
+		left: 0;
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	}
 
-    .hfe-nav-menu.show {
-        display: flex;
-    }
+	.hfe-nav-menu.show {
+		display: flex;
+	}
 
-    .hfe-nav-menu li {
-        margin: 10px 0;
-        text-align: center;
-    }
+	.hfe-nav-menu li {
+		margin: 10px 0;
+		text-align: center;
+	}
 
-    .menu-toggle {
-        display: block;
-    }
+	.menu-toggle {
+		display: block;
+	}
 }
 
-/* Estilos da seção Home */
 #home {
-    width: 100%;
-    /* Ocupa 100% da largura da tela */
-    min-height: 100vh;
-    /* Ocupa 100% da altura da tela */
-    display: flex;
-    /* Opcional: para alinhar conteúdo dentro da seção */
-    justify-content: center;
-    /* Opcional: para centralizar horizontalmente */
-    align-items: center;
-    /* Opcional: para centralizar verticalmente */
-    padding: 20px;
-    /* Ajuste o padding conforme necessário */
-    background-color: transparent;
-    /* Ajuste a cor de fundo conforme necessário */
-    box-sizing: border-box;
-    /* Inclui padding e bordas na largura e altura */
-    margin: 0;
-    /* Remove qualquer margem externa, se necessário */
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-/* Estilos para o conteúdo principal */
 .home-content {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    /* Espaçamento ao redor do conteúdo */
-}
-
-.home-text {
-    padding-right: 20px;
-    /* Aumenta o espaço à direita do texto */
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .home-image {
-    flex: 1;
-    margin-left: 40px;
-    /* Aumenta o espaço à esquerda da imagem */
+	flex: 1;
+	margin-left: 40px;
 }
 
 .home-image img {
-    max-width: 100%;
-    /* Garante que a imagem não ultrapasse a largura do contêiner */
-    height: auto;
-    /* Mantém a proporção da imagem */
+	max-width: 100%;
+	height: auto;
 }
 
-
-
 .home-text .assine-ja {
-    padding-left: -200px;
-    font-size: 3rem;
-    /* Tamanho da fonte para "Assine Já!" */
-    font-weight: bold;
-    /* Negrito para o texto */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    /* Sombra para o texto */
-    margin-bottom: 10px;
-    /* Espaçamento abaixo do h2 */
-    color: var(--color-light-gray);
-    line-height: 1px;
+	font-size: 3rem;
+	font-weight: bold;
+	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+	margin-bottom: 10px;
+	line-height: 1px;
 }
 
 .home-text .velocidade {
-    padding-left: -200px;
-    font-size: 2rem;
-    /* Tamanho da fonte para "e conheça a verdadeira velocidade." */
-    font-weight: bold;
-    /* Negrito para o texto */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    /* Sombra para o texto */
-    margin-bottom: 20px;
-    /* Espaçamento abaixo do h2 */
-    color: var(--color-light-gray);
+	margin-bottom: 20px;
+	font-size: 2rem;
+	font-weight: bold;
+	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .home-text p {
-    padding-left: -200px;
-    font-size: 1.4rem;
-    /* Tamanho da fonte para o parágrafo */
-    font-weight: normal;
-    /* Peso normal para o texto do parágrafo */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-    /* Sombra para o texto do parágrafo */
-    margin-top: 0;
-    /* Remove margem superior padrão */
-    margin-bottom: 20px;
-    /* Espaçamento abaixo do parágrafo */
-    max-width: 600px;
-    /* Limita a largura máxima do parágrafo */
-    text-align: left;
-    /* Alinha o texto à esquerda */
-    line-height: 1.6;
-    /* Ajusta o espaçamento entre linhas para melhor legibilidade */
-    color: var(--color-light-gray);
+	font-size: 1.4rem;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+	margin-bottom: 20px;
+	max-width: 600px;
+	text-align: left;
+	line-height: 1.6;
 }
 
 .home-text .assine-agora {
-    display: inline-block;
-    /* Faz o link se comportar como um bloco em linha */
-    padding: 10px 20px;
-    /* Espaçamento interno do link */
-    border-radius: 25px;
-    /* Bordas arredondadas */
-    background-color: var(--color-vivid-cyan-blue);
-    /* Cor de fundo */
-    text-decoration: none;
-    /* Remove o sublinhado */
-    font-weight: bold;
-    /* Negrito para o texto do link */
-    color: var(--color-light-gray);
-    border: 1px solid #01010156;
-    padding: 12px 25px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-weight: 900;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+	display: inline-block;
+	padding: 10px 20px;
+	border-radius: 25px;
+	background-color: var(--color-vivid-cyan-blue);
+	text-decoration: none;
+	font-weight: bold;
+	border: 1px solid #01010156;
+	padding: 12px 25px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	font-weight: 900;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .home-text .assine-agora:hover {
-    background-color: var(--color-vivid-purple);
-    /* Cor de fundo ao passar o mouse */
+	background-color: var(--color-vivid-purple);
 }
 
 .home-image img {
-    max-width: 100%;
-    /* Garante que a imagem não ultrapasse a largura do contêiner */
-    height: auto;
-    /* Mantém a proporção da imagem */
+	max-width: 100%;
+	height: auto;
 }
 
-/* Estilos da seção de planos */
 #planos {
-    width: 100%;
-    min-height: 100vh;
-    background: transparent;
-    color: white;
-    padding: 60px 20px;
-    text-align: center;
-    gap: 40px;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background: transparent;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	gap: 40px;
 }
 
 #planos h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 20px;
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-bottom: 20px;
 }
 
 #planos p {
-    margin-top: 10px;
-    font-size: 1.1rem;
+	margin-top: 10px;
+	font-size: 1.1rem;
 }
 
-/* Estilo dos planos */
 .planos {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin: 0;
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	flex-wrap: wrap;
+	margin: 0;
 }
 
 .plano {
-    background-color: #ffffffea;
-    border: 1px solid #aaaaaac5;
-    border-radius: 18px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    padding: 22px;
-    /* Aumentado para melhor espaçamento interno */
-    width: 240px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    margin: 20px;
-    min-height: 200px;
-    display: flex;
-    /* Adicionado para facilitar o alinhamento dos filhos */
-    flex-direction: column;
-    /* Adicionado para empilhar verticalmente os filhos */
-    align-items: center;
-    /* Centraliza os itens dentro da caixa */
-    justify-content: space-between;
-    /* Espaça uniformemente o conteúdo */
-    box-shadow: inset 1px 1px 25px rgba(0, 0, 0, 0.251);
+	padding: 22px;
+	margin: 20px;
+	width: 240px;
+	min-height: 200px;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-between;
+	border-radius: 18px;
+	background-color: #ffffffea;
+	border: 1px solid #aaaaaac5;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+	box-shadow: inset 1px 1px 25px rgba(0, 0, 0, 0.315);
 }
 
 .plano:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.550);
+	transform: scale(1.05);
+	box-shadow: 0 0 25px rgba(0, 0, 0, 0.55);
 }
 
 /* Estilo dos títulos dentro dos planos */
 .plano h3 {
-    font-size: 3rem;
-    font-weight: 900;
-    margin-bottom: 0;
-    /* Remove o espaçamento abaixo do título */
-    color: #333;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Poppins', sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
 
+.plano span {
+	color: #333;
 }
 
 .plano .number {
-    font-size: 4rem;
-    font-weight: 1000;
-    color: #333;
-    text-shadow: 1px 1px 0px rgb(0, 0, 0);
-    margin: 0;
-    /* Remove margem para alinhamento */
-    margin-top: -50px;
+	font-size: 4.5em;
+	font-weight: 900;
+	text-shadow: 1px 1px 2px rgb(0, 0, 0);
 }
 
 .plano .unit {
-    font-size: 1.7rem;
-    color: var(--color-dark-gray);
-    font-weight: bold;
-    margin-top: -10px;
-    line-height: 0;
-    margin-bottom: 30px;
-
+	font-size: 1.7rem;
+	font-weight: bold;
+	margin-top: -10px;
+	line-height: 0;
+	margin-bottom: 30px;
 }
 
-/* Estilo dos parágrafos dentro dos planos */
-.plano p {
-    margin: 0.5px 0;
-    color: #4242429d;
-    line-height: 1;
-    margin-bottom: 10px;
-    font-size: 2.5rem;
-    font-weight: 600;
-}
-
-
-/* Estilo do preço */
 .plano .price {
-
-    font-weight: 1000;
-    margin: 0;
-    color: #333;
-    text-shadow: 2px 2px 4px rgba(97, 97, 97, 0.5);
-    padding: 2px 5px;
-    background-color: transparent;
-    display: inline-block;
-    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.397);
-    font-size: 3em;
+	font-weight: 900;
+	padding: 2px 5px;
+	background-color: transparent;
+	display: inline-block;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.397);
+	font-size: 3em;
 }
 
 .price .reais {
-    font-size: 3em;
-    /* Tamanho maior para os reais */
-    color: #333;
-    /* Cor preta para os reais */
+	font-size: 4em;
 }
 
 .price .centavos {
-    font-size: 0.75em;
-    /* Tamanho menor para os centavos */
-    vertical-align: super;
-    /* Alinha os centavos como superscript */
-    color: #555;
-    /* Cor cinza para os centavos */
+	font-size: 1em;
+}
+.plano p {
+	color: #3333337a;
+	margin: 0.5px 0;
+	line-height: 1;
+	margin-bottom: 10px;
+	font-size: 2.5rem;
+	font-weight: 600;
 }
 
-/* Estilo do botão */
-.elementor-button {
-    background-color: var(--color-vivid-cyan-blue);
-    color: var(--color-light-gray);
-    border: 1px solid #aaaaaac5;
-    padding: 12px 25px;
-    font-size: 16px;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    text-decoration: none;
-    margin-top: 20px;
-    /* Adiciona espaço acima do botão */
-    font-weight: 1000;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-.elementor-button:hover {
-    background-color: var(--color-vivid-purple);
-    transition: background-color 0.5s, border-color 0.5s;
-}
-
-/* Estilo do título e do parágrafo abaixo do título */
 #planos h2 {
-    font-size: 2.4rem;
-    /* Tamanho do título */
-    font-weight: 600;
-    /* Peso da fonte do título */
-    margin-bottom: 10px;
-    /* Espaçamento abaixo do título */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-    /* Sombra para destacar o título */
-    line-height: 1;
-    color: #f4f4f4f5;
+	font-size: 2.5rem;
+	font-weight: 600;
+	margin-bottom: 10px;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+	line-height: 1;
 }
 
 #planos .subtitulo {
-    margin-top: 0;
-    /* Remove o espaço acima do parágrafo */
-    font-size: 1.1rem;
-    /* Tamanho da fonte do parágrafo */
-    line-height: 1.4;
-    /* Ajusta o espaçamento entre as linhas */
-    color: var(--color-light-gray);
-    /* Cor do texto do parágrafo */
-    font-weight: 500;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.650);
-    /* Sombra para melhorar a legibilidade */
+	font-size: 1.5rem;
+	line-height: 1.4;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+.elementor-button {
+	background-color: var(--color-vivid-cyan-blue);
+	border: 1px solid #aaaaaac5;
+	border-radius: 50px;
+	padding: 12px 20px;
+	font-size: 16px;
+	cursor: pointer;
+	text-decoration: none;
+	font-weight: 900;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+	transition: background-color 0.3s ease;
 }
 
-
-/* Estilos da seção Sobre e Contato */
-.sobre-e-contato {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 60px;
-    /* Espaçamento entre os blocos de texto e formulário */
+.elementor-button:hover {
+	background-color: var(--color-vivid-purple);
 }
 
-/* Estilos para a seção Sobre */
 #sobre {
-    width: 100%;
-    min-height: 100vh;
-    /* Ocupa 100% da altura da tela */
-    padding: 60px 20px;
-    /* Espaçamento ao redor da seção */
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    align-items: center;
-    /* Alinha os itens à esquerda */
-    background-color: transparent;
-    /* Cor de fundo da seção */
+	width: 100%;
+	min-height: 100vh;
+	padding: 60px 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
-#sobre h1 {
-    margin: 0;
-    /* Remove a margem padrão do título */
-    margin-bottom: 20px;
-    /* Espaçamento abaixo do título */
-    text-align: left;
-    /* Alinha o título à esquerda */
-    color: var(--color-light-gray);
-    /* Cor do título */
-    width: 100%;
-    /* Garante que o título não ultrapasse os limites do contêiner */
-    box-sizing: border-box;
-    /* Inclui padding e border no cálculo da largura total */
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-    font-size: 2rem;
-
-}
-
-/* Estilos do Bloco de Texto */
-.sobre-texto {
-    background-color: transparent;
-    /* Cor de fundo do bloco de texto */
-    padding: 30px;
-    /* Espaçamento interno */
-    border-radius: 10px;
-    /* Bordas arredondadas */
-    flex: 1;
-    /* Permite que o bloco de texto ocupe a largura disponível */
-    max-width: 600px;
-    /* Largura máxima do bloco de texto */
-    color: var(--color-light-gray);
-    /* Cor do texto */
-    font-size: 1.4rem;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+.sobre-texto h2 {
+	margin-bottom: 20px;
+	text-align: left;
+	width: 100%;
+	box-sizing: border-box;
+	text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+	font-size: 2rem;
+	line-height: 0.5;
 }
 
 .sobre-texto p {
-    line-height: 1.6;
-    /* Altura da linha para melhor legibilidade */
+	font-size: 1.3rem;
+	text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+.sobre-texto {
+	padding: 30px;
+	flex: 1;
+}
+.sobre {
+	display: flex;
 }
 
-
-/* Estilos do Bloco de Formulário */
 .contato-formulario {
-    background-color: transparent;
-    /* Cor de fundo do bloco de formulário */
-    padding: 30px;
-    /* Espaçamento interno */
-    border-radius: 10px;
-    /* Bordas arredondadas */
-    flex: 1;
-    /* Permite que o bloco de formulário ocupe a largura disponível */
-    max-width: 600px;
-    /* Largura máxima do bloco de formulário */
-
-}
-
-/* Estilos do Formulário */
-.contato-formulario form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    /* Garante que o formulário ocupe toda a largura do bloco */
-    align-items: center;
-    /* Centraliza os campos de input e textarea horizontalmente */
-    background-color: #ffffff31;
-    /* Gradiente cinza claro */
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+	flex: 1;
 }
 
 .contato-formulario h2 {
-    color: var(--color-light-gray);
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-    font-size: 2rem;
-    line-height: 0;
+	margin-bottom: 20px;
+	text-align: left;
+	width: 100%;
+	box-sizing: border-box;
+	text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+	font-size: 2rem;
+	line-height: 0.5;
 }
 
 .contato-formulario p {
-    color: var(--color-light-gray);
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-    font-size: 1.4rem;
+	font-size: 1.3rem;
+	text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+.contato-formulario form {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	padding: 20px;
+	border-radius: 20px;
+	background-color: #ffffff15;
+	box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .contato-formulario label,
 .contato-formulario input,
 .contato-formulario textarea {
-    width: 90%;
-    /* Ocupa 90% da largura do bloco */
-    margin: 8px 0;
-    /* Espaçamento vertical entre os campos */
-
+	width: 90%;
+	margin: 8px;
 }
 
 .contato-formulario input,
 .contato-formulario textarea {
-    padding: 10px;
-    /* Espaçamento interno */
-    border: 1px solid #03030341;
-    /* Borda dos campos */
-    border-radius: 20px;
-    /* Bordas arredondadas */
-    box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.259);
+	padding: 20px;
+	border: 1px solid #03030341;
+	border-radius: 20px;
+	box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.259);
 }
 
-/* Estilos dos Rótulos */
 .contato-formulario label {
-    margin-bottom: 8px;
-    /* Espaçamento abaixo do rótulo */
-    color: var(--color-light-gray);
-    /* Cor do rótulo */
-    font-size: 1.1rem;
-    /* Tamanho da fonte do rótulo */
-    font-family: 'poppins', sans-serif;
-    /* Fonte dos rótulos */
+	margin-bottom: 10px;
+	font-size: 1rem;
 }
-
 
 .contato-formulario input::placeholder,
 .contato-formulario textarea::placeholder {
-    color: #888888;
-    /* Cor do texto do placeholder */
-    font-style: italic;
-    /* Estilo do texto do placeholder */
-    font-family: 'Poppins', sans-serif;
+	font-family: 'poppins';
+	font-style: italic;
 }
 
 .contato-formulario button {
-    width: 95%;
-    padding: 10px 20px;
-    /* Espaçamento interno do botão */
-    border: 1px solid #0000001c;
-    /* Borda do botão */
-    border-radius: 20px;
-    /* Bordas arredondadas */
-    background-color: var(--color-vivid-cyan-blue);
-    /* Cor de fundo do botão */
-    color: var(--color-light-gray);
-    /* Cor do texto do botão */
-    cursor: pointer;
-    /* Cursor de ponteiro ao passar sobre o botão */
-    transition: background-color 0.3s, border-color 0.3s;
-    /* Transições suaves */
-    font-weight: bold;
-    /* Negrito no texto do botão */
-    font-family: 'Poppins', sans-serif;
-    /* Fonte do botão */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+	width: 95%;
+	padding: 10px 20px;
+	border: 1px solid #0000001c;
+	border-radius: 20px;
+	background-color: var(--color-vivid-cyan-blue);
+	cursor: pointer;
+	font-weight: bold;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .contato-formulario button:hover {
-    background-color: var(--color-vivid-purple);
-    /* Cor de fundo ao passar o mouse */
+	background-color: var(--color-vivid-purple);
 }
 
-
-/* Estilos para o footer */
 footer {
-    background-color: transparent;
-    /* Cor de fundo escura para contraste com o texto branco */
-    color: rgba(255, 255, 255, 0.573);
-    /* Cor do texto */
-    padding: 20px;
-    /* Espaçamento interno */
-    text-align: center;
-    /* Centraliza o texto */
-    font-family: 'Poppins', sans-serif;
-    /* Fonte Poppins */
-    font-size: 1rem;
-    /* Tamanho da fonte */
-    margin-top: 40px;
-    /* Espaço acima do footer */
-}
-
-footer p {
-    margin: 0;
-    /* Remove a margem padrão */
+	text-align: center;
 }
